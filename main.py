@@ -43,8 +43,7 @@ async def generate_summary(youtube_url: str, model_name: str):
     transcript = GetVideo.transcript(youtube_url)
     if model_name == "Gemini":
         summary = Model.google_gemini(transcript=transcript, prompt=Prompt.prompt1())
-    elif model_name == "ChatGPT":
-        summary = Model.openai_chatgpt(transcript=transcript, prompt=Prompt.prompt1())
+
     else:
         raise HTTPException(status_code=400, detail="Invalid model name")
 
@@ -61,8 +60,7 @@ async def generate_timestamps(youtube_url: str, model_name: str):
 
     if model_name == "Gemini":
         timestamps = Model.google_gemini(transcript_time, Prompt.prompt1(ID="timestamp"), extra=youtube_url_full)
-    elif model_name == "ChatGPT":
-        timestamps = Model.openai_chatgpt(transcript_time, Prompt.prompt1(ID="timestamp"), extra=youtube_url_full)
+
     else:
         raise HTTPException(status_code=400, detail="Invalid model name")
 

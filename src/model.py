@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
-from openai import OpenAI
+
 
 
 class Model:
@@ -22,14 +22,3 @@ class Model:
         except Exception as e:
             return f"⚠️ API Error: {e}"
 
-    @staticmethod
-    def openai_chatgpt(transcript, prompt, extra=""):
-        client = OpenAI(api_key=os.getenv("OPENAI_CHATGPT_API_KEY"))
-        try:
-            response = client.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[{"role": "system", "content": prompt + extra + transcript}]
-            )
-            return response.choices[0].message["content"]
-        except Exception as e:
-            return f"⚠️ API Error: {e}"
