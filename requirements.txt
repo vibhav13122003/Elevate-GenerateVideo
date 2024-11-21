@@ -4,7 +4,6 @@ uvicorn
 python-dotenv
 pydantic
 
-
 # Generative AI APIs
 google-generativeai
 openai
@@ -13,28 +12,13 @@ openai
 youtube-transcript-api
 beautifulsoup4
 
-# Streamlit for Frontend
+# Frontend
 streamlit
-st-copy-to-clipboard
-strip-markdown
-
-# Required Google Libraries
-google-auth
-google-auth-httplib2
-google-api-core
-google-api-python-client
-proto-plus
-protobuf
-grpcio
-grpcio-status
-googleapis-common-protos
 
 # Utilities
 requests
 urllib3
-sniffio
 tqdm
 
-# Dependency for FastAPI/Starlette
+# FastAPI/Starlette Dependencies
 starlette
-
