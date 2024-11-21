@@ -1,0 +1,7 @@
+*.md
+*.txt
+*.log
+*.git*
+node_modules/
+__pycache__/
+*.zip
